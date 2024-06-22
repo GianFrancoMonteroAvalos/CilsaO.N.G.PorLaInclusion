@@ -79,6 +79,11 @@ input:valid ~ label {
     top: 20px;
 }
 
+input::placeholder {
+    color: red; 
+    opacity: 0.5; 
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
 }
@@ -87,7 +92,6 @@ input[type="date"] {
     padding-left: 5px;
     color: transparent; 
 }
-
 
 button {
     width: 100%;
@@ -105,3 +109,4 @@ button {
 button:hover {
   background-color: rgb(255, 255,255, 0.5);
 }
+

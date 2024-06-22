@@ -24,7 +24,7 @@
             </div>
             <div class="inputbox">
                 <ion-icon name="mail-outline"></ion-icon>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Este no es un mail valido" required>
                 <label for="email">Email:</label>
             </div>
             <div class="inputbox">
@@ -51,6 +51,13 @@
         link.setAttribute('href', 'style.css');
       }
     }
+    document.getElementById('email').addEventListener('focus', function() {
+      this.setAttribute('placeholder', 'Este no es un mail válido');
+    });
+
+    document.getElementById('email').addEventListener('blur', function() {
+      this.removeAttribute('placeholder');
+    });
     </script>
 </body>  
 </body>
