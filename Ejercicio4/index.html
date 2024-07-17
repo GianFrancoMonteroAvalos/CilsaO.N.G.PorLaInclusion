@@ -11,38 +11,70 @@
     .form-label-sm {
       font-size: 0.875em;
     }
+
+    .form-signin {
+      max-width: 500px;
+      padding: 1rem;
+    }
+
+    .form-signin .form-floating:focus-within {
+      z-index: 2;
+    }
+
+    .form-signin input {
+      margin-bottom: 10px;
+    }
   </style>
   <link href="sign-in.css" rel="stylesheet">
 </head>
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
   <main class="form-signin w-100 m-auto">
-    <form>
-      <div style="text-align: center;">
+    <form class="needs-validation" novalidate>
+      <div class="text-center">
         <img class="mb-4" src="CilsaONG.png" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Formulario de Información Personal</h1>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
         <label for="nombre" class="form-label-sm">Nombre</label>
+        <div class="invalid-feedback">
+          Por favor, ingrese su nombre.
+        </div>
       </div>
+
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
         <label for="apellido" class="form-label-sm">Apellido</label>
+        <div class="invalid-feedback">
+          Por favor, ingrese su apellido.
+        </div>
       </div>
+
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
         <label for="email" class="form-label-sm">Email</label>
+        <div class="invalid-feedback">
+          Por favor, ingrese un email válido.
+        </div>
       </div>
+
       <div class="form-floating mb-3">
-        <input type="date" class="form-control" id="fecha-nacimiento" name="fecha-nacimiento" placeholder="Fecha de nacimiento">
+        <input type="date" class="form-control" id="fecha-nacimiento" name="fecha-nacimiento" placeholder="Fecha de nacimiento" required>
         <label for="fecha-nacimiento" class="form-label-sm">Fecha de nacimiento</label>
+        <div class="invalid-feedback">
+          Por favor, ingrese su fecha de nacimiento.
+        </div>
       </div>
+
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="pais" name="pais" placeholder="País">
+        <input type="text" class="form-control" id="pais" name="pais" placeholder="País" required>
         <label for="pais" class="form-label-sm">País</label>
+        <div class="invalid-feedback">
+          Por favor, ingrese su país.
+        </div>
       </div>
-      
+
       <button type="submit" class="btn btn-primary w-100 py-2">Enviar</button>
       <br><br>
       <button type="button" class="btn btn-secondary w-100 py-2" onclick="toggleDarkMode()">Cambiar a Modo Oscuro</button>
@@ -52,13 +84,33 @@
   </main>
 
   <script>
+    // Función para alternar entre modos claro y oscuro
     function toggleDarkMode() {
       document.body.setAttribute('data-bs-theme', 'dark');
     }
-    
+
     function toggleLightMode() {
       document.body.setAttribute('data-bs-theme', 'light');
     }
+
+    // Script de validación de Bootstrap
+    (function () {
+      'use strict'
+
+      var forms = document.querySelectorAll('.needs-validation')
+
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
   </script>
 </body>
 </html>
