@@ -1,0 +1,27 @@
+.custom-card {
+    width: 100%;
+    border: 1px solid #000; 
+    border-radius: 0.25rem;
+    text-align: center; 
+    padding: 1rem;
+    background-color: #fff; 
+}
+.custom-card img {
+    max-width: 100%;
+    height: auto;
+}
+.custom-card h5 {
+    margin: 0.5rem 0;
+}
+.custom-card .card-body {
+    padding: 0;
+}
+.custom-card .qr-code {
+    width: 50%; /* Ajusta el tamaño del código QR */
+    margin: 0 auto; /* Centra la imagen */
+}
+
+.carousel-item img {
+    height: 500px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover;
+}
